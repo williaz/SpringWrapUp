@@ -3,19 +3,42 @@ SPRING MVC AND THE WEB PLAYER
 ANS: web.xml file is placed under WEB-INF folder to configure a web application based on Java EE.
      we configure DispatcherServlet and ContextLoaderListener in web.xml to activate Spring MVC component.
 
-
-
-
-
-• MVC is an abbreviation for a design pattern. What does it stand for and what is the
+2. MVC is an abbreviation for a design pattern. What does it stand for and what is the
 idea behind it?
-• Do you need spring-mvc.jar in your classpath or is it part of spring-core?
-• What is the DispatcherServlet and what is it used for?
-• Is the DispatcherServlet instantiated via an application context?
-• What is the root application context? How is it loaded?
+ANS: MVC stands for Model-View-Controller, it is a design pattern used mostly in web application.
+     It separates the business logic from other layers such as user interface and controller.
+     The model layer consists business logic; The view layer renders the information from the model layer.
+     The controller receives user input, redirects the flow to model layer and calls view layer to display data.
+
+3. Do you need spring-mvc.jar in your classpath or is it part of spring-core?
+ANS: Yes, we need spring-webmvc.jar in the library (WEB-INF/lib folder) of the web application.
+     It is not part of spring-core.jar.
+
+4. What is the DispatcherServlet and what is it used for?
+ANS: DispatcherServlet is the front controller to dispatch HTTP request to registered controllers based on UR pattern.
+     Coordinates all requests and return related view to users.
+
+5. Is the DispatcherServlet instantiated via an application context?
+ANS: DispatcherServlet is instantiated by a HTTP request based on URL mapping. it uses ac.
+     ApplicationCOntext is instantiated before DispatcherServlet by defining a contextConfigLocation in web.xml.
+     DispatcherServlet can access ApplicationContext's beans through xml/java configuration or autowiring with annotation.
+
+6. What is the root application context? How is it loaded?
+ANS: to prepare the web application. It is used to create application's services such as business component and DAO.
+
+7. What is the ContextLoaderListener and what does it do?
+ANS: ContextLoaderListener will inject root application context into the ServletContext before creating other servlets.
+     Thus we can access root application context in any servlet. We can configure it in web.xml.
+
+
+
+
+
+
+
 • What is the @Controller annotation used for? How can you create a controller
 without an annotation?
-• What is the ContextLoaderListener and what does it do?
+
 
 • How is an incoming request mapped to a controller and mapped to a method?
 • What is the @RequestParam used for?
