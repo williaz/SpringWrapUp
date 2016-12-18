@@ -1,0 +1,79 @@
+REST
+1. What does REST stand for?
+ANS: REST stands for REpresentational State Transfer. It is an architectural style for designing distribute system.
+     It is not a standard but a set of constraints, such as being stateless, having c/s relationship, and a uniform interface.
+     Mostly, it is associated with HTTP.
+
+2. What are safe REST operations?
+ANS: GET, HEAD, and OPTIONS operations are safe, as they never change a resource, but only access it.
+
+3. What are idempotent operations? Why is idempotency important?
+ANS: GET, PUT, DELETE, HEAD, OPTIONS are idempotent operations;
+     Idempotent operation produces same results if executed multiple times.
+     They can have side effects, but the user doesn't expect them, so they can't be critical to the operation of the system.
+
+4. Is REST scalable and/or interoperable?
+ANS: REST is scalable and interoperable.
+
+5. Is REST normally stateless?
+ANS: ALL communication is stateless and session state is kept in the client side.
+     States are represented in URIs and this improve scalability.
+     REST also provides caching.
+
+6. Is REST secure? What can you do to secure it?
+ANS: By default, REST is not secure.
+     We can configure security framework like Spring security for REST based URIs to secure HTTP request.
+
+7. Does REST work with transport layer security (TLS)?
+ANS: REST can work with transport layer security and SSL.
+
+8. Which HTTP methods does REST use?
+ANS: for CRUD: RequestMethod.POST, GET, PUT, DELETE;
+     HEAD, OPTIONS, PATCH, TRACE
+
+9. What is the HTTP status return code for a successful DELETE statement?
+ANS: HTTP 204 No Content: the server processed the reuqest successfully, without returning any content.
+
+10. Name some common http response codes. When do you need @ResponseStatus?
+ANS: 1XX - informational
+     2XX - success : 200 OK; 201 Created; 202 Accepted; 204 No Content;
+     3XX - redirection: 308 Permanent Redirect;
+     4XX - client error: 400 Bad request; 401 Unauthorized; 404 No Found; 408 Request Timeout
+     5XX - server error
+     use @ResponseState to apply on HTTP response, to override status infoset by other means.
+
+11. Where do you need @EnableWebMVC?
+ANS: we use @EnableWebMvc on Java configuration class to enable annotations like @RequestMapping, @ResponseBody.
+
+12. Do you need Spring MVC in your classpath?
+ANS: For using RestTemplate, you only need spring-web dependency.
+
+13. What is an HttpMessageConverter?
+ANS: HttpMessageConverter can convert different MediaType between Java object.
+     like MarshalingHttpMessageConverter to read/write XML;
+     MappingJacksonHttpMessageConverter to read/write JSON;
+     once use @EnableWebMvc, these converters are enabled by default.
+
+
+
+
+•
+• What is a resource?
+
+
+
+• What are the advantages of the RestTemplate?
+
+
+
+• What does @RequestMapping do?
+• Is @Controller a stereotype? Is @RestController a stereotype?
+• What is the difference between @Controller and @RestController?
+• When do you need @ResponseBody?
+• What does @PathVariable do?
+
+• What does CRUD mean?
+
+
+
+

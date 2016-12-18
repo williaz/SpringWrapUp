@@ -8,7 +8,7 @@
     <!--scan @Component, @Repository, @Controller, @Service, and also @Autowired, @Qualifier-->
     <!--<context:annotation-config/>-->
     <context:component-scan base-package="mvc.controller"/>
-    <!--for @Valid, @RequestBody, @ResponseBody-->
+    <!--same as @EnableWebMvc, for @Valid, @RequestBody, @ResponseBody-->
     <mvc:annotation-driven/>
     <!--resolve view name through URL pattern-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
