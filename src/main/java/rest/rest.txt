@@ -54,26 +54,30 @@ ANS: HttpMessageConverter can convert different MediaType between Java object.
      MappingJacksonHttpMessageConverter to read/write JSON;
      once use @EnableWebMvc, these converters are enabled by default.
 
+14. Is @Controller a stereotype? Is @RestController a stereotype?
+ANS: Both @Controller and @RestController are stereotype, used for denoting the roles of types or method
+     in the overall architecture at conceptual level.
 
+15. What is the difference between @Controller and @RestController?
+ANS: @RestController will automatically add @ResponseBody to all method.
 
+16. When do you need @ResponseBody?
+ANS: use @ResponseBody to indicates the return of the method will be inside web response.
 
-•
-• What is a resource?
+17. What are the advantages of the RestTemplate?
+ANS: RestTemplate simplifies communication with HTTP servers by providing convenient Http request methods,
+     internally using HttpMessageConverter to convert Http messages to Java objects, using customer exception handler.
 
+18. What does CRUD mean?
+ANS: CRUD stands for Create, Retrieve, Update, and Delete.
+     For Http verbs, C - POST; R - GET; U - UPDATE, PATCH; D - DELETE.
 
+19. What is a resource?
+ANS: Resource is information, anything you want to supply.
 
-• What are the advantages of the RestTemplate?
+20. What does @RequestMapping do?
+ANS: @RequestMapping maps web requests onto specific handler classes or handler methods.
 
-
-
-• What does @RequestMapping do?
-• Is @Controller a stereotype? Is @RestController a stereotype?
-• What is the difference between @Controller and @RestController?
-• When do you need @ResponseBody?
-• What does @PathVariable do?
-
-• What does CRUD mean?
-
-
-
+21. What does @PathVariable do?
+ANS: @PathVariable annotates parameters for access URI template values.
 
