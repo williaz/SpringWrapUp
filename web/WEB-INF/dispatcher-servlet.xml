@@ -7,7 +7,7 @@
 
     <!--scan @Component, @Repository, @Controller, @Service, and also @Autowired, @Qualifier-->
     <!--<context:annotation-config/>-->
-    <context:component-scan base-package="mvc.controller"/>
+    <context:component-scan base-package="mvc"/>
     <!--same as @EnableWebMvc, for @Valid, @RequestBody, @ResponseBody-->
     <mvc:annotation-driven/>
     <!--resolve view name through URL pattern-->
