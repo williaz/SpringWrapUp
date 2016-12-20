@@ -1,5 +1,7 @@
 package mvc;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedInputStream;
@@ -10,22 +12,30 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
+
 /**
  * Created by williaz on 12/19/16.
  */
 @Service("service")
 public class UserServiceImpl implements UserService {
+
     private Path data = Paths.get("src/main/resources/users.txt");
+    //private Path data = Paths.get("SpringWrapUp_war_exploded/WEB-INF/classes/users.txt");
     private Map<Long, User> userCache = new HashMap<>();
 
     public boolean isValidUser(long id, String password) {
         renewCache();
+
         if (userCache.containsKey(id) && password.equals(userCache.get(id).getPassword())) return true;
         else return false;
     }

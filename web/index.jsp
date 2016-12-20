@@ -12,5 +12,6 @@
   </head>
   <body>
 <a href="/users/login"> log in </a>
+<a href="/users/register"> register </a>
   </body>
 </html>

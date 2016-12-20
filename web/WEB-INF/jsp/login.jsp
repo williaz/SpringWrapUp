@@ -29,5 +29,6 @@
         </tr>
     </table>
 </form:form>
+<a href="register"> Register now! </a>
 </body>
 </html>

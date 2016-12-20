@@ -11,6 +11,7 @@
     <title>User Home</title>
 </head>
 <body>
-
+hello, ${user.name} !
+<a href="/users/profile"> profile</a>
 </body>
 </html>

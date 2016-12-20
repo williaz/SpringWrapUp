@@ -12,7 +12,7 @@
     <title>New User</title>
 </head>
 <body>
-<form:form id = "loginForm" method = "POST" action = "/users/login">
+<form:form id = "registerForm" method = "POST" action = "/users/register" modelAttribute="user">
     <table>
         <tr>
             <td><form:label path="id">Id</form:label></td>
@@ -30,6 +30,9 @@
             <!--same as <input id="password" name="password" type="password" value=""/>-->
             <td><form:label path="password">Password</form:label></td>
             <td><form:password path="password"/></td>
+        </tr>
+        <tr>
+            <td><input type = "submit" value="submit"></td>
         </tr>
     </table>
 </form:form>

@@ -19,6 +19,9 @@ public class User implements Serializable{
     private String password;
     private long phoneNumber;
 
+    public User() {
+    }
+
     public User(long id, String name, String password, long phoneNumber) {
         this.id = id;
         this.name = name;
@@ -72,5 +75,15 @@ public class User implements Serializable{
     @Override
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                '}';
     }
 }
