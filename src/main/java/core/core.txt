@@ -18,7 +18,7 @@ ANS: application context loads bean definitions and wires them together.
      XmlWebApplicationContext
 
 4. What is the concept of a “container” and what is its lifecycle?
-ANS: In Spring, objects live in the container.
+ANS: "container" is a component that can contain other components inside it.
      BeanFactory and ApplicationContext interface.
 
 Bean lifecycle:
@@ -50,11 +50,13 @@ ANS: @Component to indicate classes as a component class, and inform Spring cont
      @Autowired to indicate Spring should find other beans in application context to match the bean's dependency.(= @Inject)
 
 6. Dependency injection using Java configuration
-ANS: type-safe
+ANS: type-safe, refactor-friendly
      @Configuration to indicate a configuration class which contains details on beans
      @Bean to indicate the method will return an object that should be registered as a bean in application context.
            by default, bean ID as the method name
 
+7. Dependency injection in XML, using constructor or setter injection
+ANS:
 
 
 
@@ -68,8 +70,7 @@ ANS: type-safe
 ANS:
 •
 
-3. Dependency injection in XML, using constructor or setter injection
-ANS:
+3.
 • Component scanning, Stereotypes and Meta-Annotations
 • Scopes for Spring beans. What is the default?
 • What is an initialization method and how is it declared in a Spring bean?

@@ -1,13 +1,16 @@
 package core.config.auto;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import core.config.Cd;
 
 /**
  * Created by williaz on 12/22/16.
  */
-@Component
-public class Cd {
+@Component("ThisLove")
+public class ThisLove implements Cd {
     @Value("This Love")
     private String name;
     @Value("Maroon 5")
@@ -35,5 +38,10 @@ public class Cd {
                 "name='" + name + '\'' +
                 ", artiest='" + artiest + '\'' +
                 '}';
+    }
+
+    @Override
+    public void play() {
+        System.out.println(this);
     }
 }
