@@ -3,7 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!--same as @Bean-->
     <!--
     <bean id = "sugar" class = "core.config.xml.Sugar">
@@ -11,6 +12,7 @@
         <property name="length" value="4.13"/>
     </bean>
     -->
+    <context:component-scan base-package="core.config.xml"/>
 
     <bean id = "sugar" class = "core.config.xml.Sugar" c:_0="Adam" p:length="4.11"/>
     <bean id = "ipod" class="core.config.xml.Ipod" p:cd-ref="sugar"/>
