@@ -130,11 +130,20 @@ ANS: JUnit @ActiveProfiles(profile = "..")
 
 • How do you configure a profile. What are possible use cases where they might be
 useful?
-ANS: differen beans for production, test
+ANS: different beans for production, test
+
 • How many profiles can you have?
 
 • What is Spring Expression Language (SpEL for short)?
 ANS: it supports querying and changing the objects at runtime.
+
+• What is a PropertyPlaceholderConfigurer used for?
+ANS: PropertyPlaceholderConfigurer resolve ${} placeholder in local properties, sytem properties and environment variables.
+     to configure: <context:property-placeholder location = "classpath:...">
+     @Bean public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+         return new PropertySourcesPlaceholderConfigurer();
+     }
+
 
 3.
 • Component scanning, Stereotypes and Meta-Annotations
@@ -172,6 +181,6 @@ test?
 • What is the preferred way to close an application context?
 • How can you create a shared application context in a JUnit test?
 • What does a static @Bean method do?
-• What is a ProperyPlaceholderConfigurer used for?
+
 • What is @Value used for?
 • What is the difference between $ and # in @Value expressions?
