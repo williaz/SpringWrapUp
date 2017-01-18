@@ -73,7 +73,7 @@ ANS: using the spring-beans schema as the root namespace of the XML file.
      <property> p-namespace for setter injection. name value/ref
 
 9. Why are you not allowed to annotate a final class with @Configuration?
-ANS: Spring creates dynamic proxies for classes annotaed with @Configuration by extending them using CGLIB,
+ANS: Spring creates dynamic proxies for classes annotated with @Configuration by extending them using CGLIB,
      so Java Configuration class can not be final.
 
 13. Why are you not allowed to annotate final methods with @Bean?
@@ -88,6 +88,7 @@ ANS: Prior to Spring 4, it is required to have a default constructor,
 ANS: Scopes are singleton, prototype, session, request, global, session and application.
      singleton is the default one.
      scope attribute in XML, or @Scope
+
 • What is the role of the @PostConstruct and @PreDestroy annotations? When will
 they get called?
 ANS: Spring uses these annotation to trigger init and destroy methods inside beans.

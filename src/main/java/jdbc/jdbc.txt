@@ -16,14 +16,31 @@ ANS: declare a bean for it. BasicDataSource/DriverManagerDataSource for developm
 • What is the Template design pattern and what is the JDBC template?
 ANS: Template allows subclass to redefine the functionality without changing he actual workflow.
 
-• What is a callback? What are the three JdbcTemplate callback interfaces described
-in the notes? What are they used for? (You would not have to remember the
-interface names in the exam, but you should know what they do if you see them in
-a code sample).
-• Can you execute a plain SQL statement with the JDBC template?
 • Does the JDBC template acquire (and release) a connection for every method
 called or once per template?
+ANS: It depends on the data source created in configuration, if it is connection pooling then same connnection can be
+     used in different calls.
+     Normally it creates a connection object for each method calls.
+
 • Is the JDBC template able to participate in an existing transaction?
+ANS: JdbcTemplate is able to participate in an existing transaction by configuration TransactionManager with
+     @Transaction or XML configuration.
+
+• What is a callback? What are the three JdbcTemplate callback interfaces described
+in the notes? What are they used for?
+ANS: A callback is a piece of code that you pass as an argument to some code so that it executes it.
+     RowMapper for mapping single row to an object returns an object.
+     RowCallbackHandler for extraction fo entire ResultSet with void return.
+     ResultSetExtractor for mapping entire ResultSet to an object return an object(collection).
+
+
+
+
+
+
+• Can you execute a plain SQL statement with the JDBC template?
+
+
 • What is a transaction? What is the difference between a local and a global
 transaction?
 • Is a transaction a cross cutting concern? How is it implemented in Spring?
